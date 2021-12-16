@@ -1,12 +1,5 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-
-RewriteCond %{HTTP_USER_AGENT} facebook [OR]
-RewriteCond %{HTTP_USER_AGENT} Facebook [OR]
-RewriteCond %{HTTP_USER_AGENT} facebookexternal
-RewriteRule ^(.*)$ https://www.youtube.com/ [L,R=302]
-
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ file.php?id=$1 [L]
